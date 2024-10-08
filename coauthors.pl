@@ -1,4 +1,6 @@
+% coauthors.pl
 
+% coauth_list(-List)
 coauth_list(List) :-
     setup_call_cleanup(
           process_create(path(git), ['shortlog', '-sne', '--all'], [stdout(pipe(Out))]),
@@ -12,6 +14,7 @@ coauth_list(List) :-
     (member(Self, List0) -> select(Self, List0, List)
     ; List = List0).
 
+% coauth_list_parse(+Lines, -List)
 coauth_list_parse([], []).
 coauth_list_parse([""], []).
 coauth_list_parse([Line|Lines], [H|List]) :-
@@ -20,9 +23,8 @@ coauth_list_parse([Line|Lines], [H|List]) :-
     split_string(Email0, ">", " ", [Email|_]),
     H = ((Name, Email), false),
     coauth_list_parse(Lines, List).
-      
 
-
+% coauth_self(-Name, -Email)
 coauth_self(Name, Email) :-
     setup_call_cleanup(
         process_create(path(git), ['config', 'user.name'], [stdout(pipe(UserName))]),
