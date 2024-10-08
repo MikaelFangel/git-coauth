@@ -25,4 +25,4 @@ process(message(Summary)) :-
 
 read_summary(Summary) :-
   write("Summary > "),
-  read_line_to_string(user_input, Summary).
+  read_string(user_input, _, Summary).
