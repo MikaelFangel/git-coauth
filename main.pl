@@ -16,6 +16,7 @@ main(Argv) :-
   ( memberchk(message(Summary), Options) -> true ; read_summary(Summary) ),
   coauth_list(Authors),
   multiselect(0, Authors, Selected),
+  ( var(Selected) -> Selected = [] ; true ),
   format_summary(Summary, Selected, FinalSummary),
   writeln(FinalSummary).
 
