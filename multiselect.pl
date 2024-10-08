@@ -34,8 +34,7 @@ parse(select, Pos, List, Result) :-
 
 neg_nth_item(Pos, List, Result) :- 
   nth0(Pos, List, (V, B), Rest),
-  (B -> Neg = false ; Neg = true),
-  nth0(Pos, Result, (V, Neg), Rest).
+  nth0(Pos, Result, (V, \+ B), Rest).
 
 display(_, []).
 display(Pos, [ (X, S) | Xs ]) :-
