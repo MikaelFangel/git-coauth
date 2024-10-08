@@ -1,3 +1,5 @@
+:- ensure_loaded('coauthors.pl').
+:- ensure_loaded('multiselect.pl').
 opt_type(a, add, boolean).
 opt_type(m, message, string).
 
