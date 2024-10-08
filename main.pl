@@ -13,7 +13,9 @@ main :-
 main(Argv) :-
   argv_options(Argv, _Positional, Options),
   process_all(Options),
-  ( memberchk(message(_), Options) -> true ; read_summary(Summary), writeln(Summary) ).
+  ( memberchk(message(_), Options) -> true ; read_summary(Summary), writeln(Summary) ),
+  coauth_list(Authors),
+  multiselect(0, Authors, Selected).
 
 process_all(Options) :-
   forall(member(Option, Options), process(Option)).
