@@ -24,5 +24,6 @@ process(message(Summary)) :-
   writeln(Cmd).
 
 read_summary(Summary) :-
+  writeln("\033[37mTerminate with CTRL+D\033[0m"),
   write("Summary > "),
   read_string(user_input, _, Summary).
