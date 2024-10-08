@@ -7,7 +7,7 @@ multiselect(Pos, List, Result) :-
   clear_screen,
   display(Pos, List),
   read_key(Key),
-  ( Key = quit -> include(is_true_tuple, List, Result)
+  ( Key = quit -> include(is_true_tuple, List, Result), clear_screen
   ; parse(Key, Pos, List, Result)
   ).
 
@@ -17,6 +17,7 @@ read_key(Key) :-
   ; Code = 106 -> Key = down  % 'j' key
   ; Code = 107 -> Key = up    % 'k' key
   ; Code = 113 -> Key = quit  % 'q' key
+  ; Code = 10 -> Key = quit   % Enter
   ).
 
 parse(up, Pos, List, Result) :-
