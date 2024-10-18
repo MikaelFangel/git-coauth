@@ -17,7 +17,7 @@ read_key(Key) :-
   ; Code = 106 -> Key = down  % 'j' key
   ; Code = 107 -> Key = up    % 'k' key
   ; Code = 113 -> Key = quit  % 'q' key
-  ; Code = 10 -> Key = quit   % Enter
+  ; Code = 13 -> Key = quit   % Enter
   ).
 
 parse(up, Pos, List, Result) :-
