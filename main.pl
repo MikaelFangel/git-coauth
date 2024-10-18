@@ -18,13 +18,13 @@ main(Argv) :-
   multiselect(0, Authors, Selected),
   ( var(Selected) -> Selected = [] ; true ),
   format_summary(Summary, Selected, FinalSummary),
-  writeln(FinalSummary).
+  shell(FinalSummary).
 
 process_all(Options) :-
   forall(member(Option, Options), process(Option)).
 
 process(add(true)) :-
-  writeln("git add all").
+  shell("git add --all").
 
 process(message(_Summary)).
 
