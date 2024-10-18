@@ -1,3 +1,5 @@
+⚠️ WARNING! This is a very early version and we're still stabilizing the project ⚠️
+
 # Git CoAuth
 
 Git CoAuth is an extension for Git that helps you give credit to your co-authors when committing to GitHub. 
