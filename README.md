@@ -1,4 +1,5 @@
-⚠️ WARNING! This is a very early version and we're still stabilizing the project ⚠️
+> [!WARNING]
+> This is a very early version and we're still stabilizing the project.
 
 # Git CoAuth
 
